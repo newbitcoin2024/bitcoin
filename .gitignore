@@ -1,0 +1,9 @@
+# Bitcoin data (NEVER PUSH)
+wallets/
+olds wallet/
+blocks/
+chainstate/
+*.dat
+debug.log
+bitcoind.pid
+.lock
