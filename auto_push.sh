@@ -1,7 +1,11 @@
 #!/bin/bash
 
-cd "/Users/francisc/Library/Application Support/Bitcoin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-git add .
-git commit -m "Auto update $(date '+%Y-%m-%d %H:%M:%S')" || exit 0
-git push
+cd "/Users/francisc/Library/Application Support/Bitcoin" || exit
+
+if [[ -n $(git status --porcelain) ]]; then
+    git add .
+    git commit -m "Auto push $(date '+%Y-%m-%d %H:%M:%S')"
+    git push
+fi
