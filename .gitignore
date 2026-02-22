@@ -6,3 +6,10 @@ chainstate/
 debug.log
 bitcoind.pid
 .lock
+settings.json
+banlist.json
+bitcoind.pid
+config.json
+fee_estimates.dat
+mempool.dat
+
