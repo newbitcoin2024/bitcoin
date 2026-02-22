@@ -1,8 +1,0 @@
-{
-    "bitcoin_cli": "C:\\\\Program Files\\\\Bitcoin\\\\daemon\\\\bitcoin-cli.exe",
-    "datadir": "C:\\\\Users\\\\franc\\\\AppData\\\\Local\\\\Bitcoin",
-    "rpcuser": "user",
-    "rpcpassword": "password",
-    "rpcport": "8332",
-    "newbitcoin_address": ""
-}
