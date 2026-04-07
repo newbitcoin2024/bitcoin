@@ -1,0 +1,1 @@
+magnet:?xt=urn:btih:6d26f118a83e22137fe4d7388c13bc54d75d3034&dn=bitcoin-blocks&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.tracker.cl%3A1337%2Fannounce
