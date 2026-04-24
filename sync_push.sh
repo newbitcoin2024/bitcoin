@@ -11,8 +11,7 @@ LOG="/tmp/bitcoin_github_sync.log"
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Début sync" >> "$LOG"
 
-# Copier les fichiers de config
-cp -f "$BITCOIN_DIR/bitcoin.conf"  "$REPO_DIR/bitcoin.conf"  2>/dev/null
+# Copier les fichiers de config (bitcoin.conf géré manuellement sur GitHub — ne pas écraser)
 cp -f "$BITCOIN_DIR/banlist.json"  "$REPO_DIR/banlist.json"  2>/dev/null
 
 # Copier blocks/index (pas les .dat — exclus par .gitignore)
