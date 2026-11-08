@@ -1,15 +1,7 @@
-# Bitcoin data (NEVER PUSH)
-wallets/
-olds wallet/
-chainstate/
 *.dat
-debug.log
-bitcoind.pid
-.lock
-settings.json
+*.log
+*.exe
+*.DS_Store
 banlist.json
-bitcoind.pid
-config.json
-fee_estimates.dat
-mempool.dat
-
+bitcoin.conf
+*.sh
