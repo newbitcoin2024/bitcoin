@@ -1,24 +1,18 @@
 #!/bin/bash
-# sync_push.sh — copie les fichiers bitcoin vers bitcoin_github et push
-# Appelé par cron à 3H et 15H
-
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export GIT_SSH_COMMAND="ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no"
+export GIT_SSH_COMMAND="ssh -i /home/papa/.ssh/id_ed25519_github -o StrictHostKeyChecking=no"
 
-BITCOIN_DIR="$HOME/.bitcoin"
-REPO_DIR="$HOME/bitcoin_github"
+BITCOIN_DIR="/home/papa/.bitcoin"
+REPO_DIR="/home/papa/bitcoin_github"
 LOG="/tmp/bitcoin_github_sync.log"
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Début sync" >> "$LOG"
 
-# Copier les fichiers de config (bitcoin.conf géré manuellement sur GitHub — ne pas écraser)
-cp -f "$BITCOIN_DIR/banlist.json"  "$REPO_DIR/banlist.json"  2>/dev/null
+cp -f "$BITCOIN_DIR/banlist.json" "$REPO_DIR/banlist.json" 2>/dev/null
 
-# Copier blocks/index (pas les .dat — exclus par .gitignore)
 mkdir -p "$REPO_DIR/blocks/index"
 rsync -a --delete "$BITCOIN_DIR/blocks/index/" "$REPO_DIR/blocks/index/" 2>/dev/null
 
-# Git push si changements
 cd "$REPO_DIR" || exit 1
 if [[ -n $(git status --porcelain) ]]; then
     git add .
